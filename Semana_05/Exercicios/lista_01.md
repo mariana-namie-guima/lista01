@@ -132,11 +132,11 @@ class Animal {
     }
 }
 
-let animal1 = new Animal('gato', 6);
-let animal2 = new Animal('cachorro', 2);
+let gato = new Animal('gato', 6);
+let cachorro = new Animal('cachorro', 2);
 
-animal1.descrever();
-animal2.descrever();
+gato.descrever();
+cachorro.descrever();
 ```
 ______
 
@@ -163,7 +163,9 @@ Chamando os Métodos:
 
 Dica: Utilize console.log() para exibir as informações!
 
+```javascript
 
+```
 ______
 
 **9)** Vamos criar um programa em JavaScript para somar notas!
@@ -185,7 +187,9 @@ Chamando o Método para Ver o Total:
 
 Dica: Utilize console.log() para exibir as informações!
 
+```javascript
 
+```
 ______
 
 **10)** Imagine que você está criando um programa em JavaScript para uma escola. Neste programa, existem diferentes tipos de funcionários, cada um com suas próprias características. Considere as seguintes classes:
@@ -206,3 +210,7 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 - Para cada objeto, chame o método calcularSalario() e mostre o salário calculado no console.
 
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
+
+```javascript
+
+```
