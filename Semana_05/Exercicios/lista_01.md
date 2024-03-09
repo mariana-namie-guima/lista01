@@ -17,6 +17,14 @@ print(a)
 
 # Questões objetivas
 
+**MINHAS RESPOSTAS**
+1) C
+2) A
+3) A
+4) A
+5) A
+6) A
+
 **1)** O que o código a seguir faz?
 
 ![Uma imagem](assets/ex01.PNG)
@@ -65,7 +73,7 @@ D) 12
 
 ______
 
-**4)** Como você criaria um método `acelerar()` em uma classe `Carro`, que recebe um parâmetro `velocidade` e o adiciona a um atributo `velocidadeAtual`?
+**4)** Como você criaria um método `acelerar()` em uma classe `Carro`, que recebe um parâmetro `velocidade` e o adiciona a um atributo `velocidadeAtual`? **Resposta: A**
 
 **A) ![Uma imagem](assets/ex04_1.PNG)**
 
@@ -77,7 +85,8 @@ D) ![Uma imagem](assets/ex04_4.PNG)
 
 ______
 
-**5)** Qual a forma correta de definir uma classe Carro em JavaScript, com um método ligar() e um atributo marca?
+**5)** Qual a forma correta de definir uma classe Carro em JavaScript, com um método ligar() e um atributo marca? **Resposta: A**
+
 
 **A) ![Uma imagem](assets/ex05_1.PNG)**
 
@@ -164,7 +173,34 @@ Chamando os Métodos:
 Dica: Utilize console.log() para exibir as informações!
 
 ```javascript
+class Animal {
+    constructor(nome, idade){
+        this.nome = nome;
+        this.idade = idade;
+    }
 
+    descrever(){
+        console.log(`${this.nome} tem ${this.idade} anos`)
+    }
+}
+
+class Gato extends Animal {
+    constructor(nome, idade, cor){
+        super(nome, idade);
+        this.cor = cor
+    }
+
+    miar(){
+        console.log('Miau!')
+    }
+}
+
+let cachorro = new Animal('cachorro', 2);
+let gato = new Gato('gato', 3, 'laranja');
+
+cachorro.descrever();
+gato.descrever();
+animal2.miar();
 ```
 ______
 
@@ -188,7 +224,25 @@ Chamando o Método para Ver o Total:
 Dica: Utilize console.log() para exibir as informações!
 
 ```javascript
+class SomadorDeNotas {
+    constructor(){
+        this.total = 0;
+    }
+    
+    adicionarNota(nota) {
+        this.total += nota;
+    }
 
+    verTotal(){
+        console.log(`Nota final: ${this.total}`);
+    }
+}
+
+let somador = new SomadorDeNotas
+somador.adicionarNota(2);
+somador.adicionarNota(5);
+
+somador.verTotal();
 ```
 ______
 
@@ -212,5 +266,43 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
 
 ```javascript
+class Funcionario {
+    //atribuição dos parâmetros aos atributos
+    constructor(nome, idade, salarioBase) {
+        this.nome = nome;
+        this.idade = idade;
+        this.salarioBase = salarioBase;
+    }
 
+    //cacula salário de um funcionário não especificado
+    calcularSalario() {
+        this.salarioFinal = this.salarioBase * 2
+        return this.salarioFinal;
+    }
+}
+
+//herança da classe Professor pela classe Funcionário
+class Professor extends Funcionario {
+    //atribuição das heranças e dos novos atributos (disciplina e horasDeAula)
+    constructor(nome, idade, salarioBase, disciplina, horasDeAula) {
+        super(nome, idade, salarioBase);
+        this.disciplina = disciplina;
+        this.horasDeAula = horasDeAula;
+    }
+
+    //calcula salário do professor
+    calcularSalario() {
+        //soma salarioBase com o valor de cada aula dada
+        this.salarioFinal = this.salarioBase + 30* this.horasDeAula
+        return this.salarioFinal;
+    }
+}
+
+//criação dos objetos professor1 e professor2
+let professor1 = new Professor('Maria', 45, 2000, 'Matemática', 20)
+let professor2 = new Professor('Marta', 30, 3000, 'Física', 40)
+
+//chama e printa método calcularSalario de cada objeto 
+console.log(professor1.calcularSalario());
+console.log(professor2.calcularSalario());
 ```
